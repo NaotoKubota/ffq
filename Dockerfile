@@ -14,7 +14,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN pip install --upgrade pip
 
 # Install TOBIAS
-RUN pip install ffq==0.2.1
+RUN pip install ffq==0.3.0
 
 # Set working directory
 WORKDIR /home
