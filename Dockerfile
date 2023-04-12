@@ -13,8 +13,11 @@ ENV DEBIAN_FRONTEND=noninteractive
 # Upgrade pip
 RUN pip install --upgrade pip
 
-# Install TOBIAS
+# Install ffq
 RUN pip install ffq==0.3.0
+
+# Install jq
+RUN apt-get update && apt-get install -y jq
 
 # Set working directory
 WORKDIR /home
