@@ -19,6 +19,9 @@ RUN pip install ffq==0.3.0
 # Install jq
 RUN apt-get update && apt-get install -y jq
 
+# Modify utils.py
+RUN sed -i 's@return BeautifulSoup(cached_get(f"{ENA_URL}/{accession}/"), "xml")@return BeautifulSoup(cached_get(f"{ENA_URL}/{accession}"), "xml")@' /usr/local/lib/python3.7/site-packages/ffq/utils.py
+
 # Set working directory
 WORKDIR /home
 
